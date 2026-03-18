@@ -43,7 +43,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	client.Search("artificial intelligence", qryma.SearchOptions{
+	response, err := client.Search("artificial intelligence", qryma.SearchOptions{
 		Lang: "en",
 	})
 	if err != nil {
