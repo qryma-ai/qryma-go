@@ -1,4 +1,4 @@
-module github.com/qryma/qryma-go
+module github.com/qryma-ai/qryma-go
 
 go 1.18
 

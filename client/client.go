@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/qryma/qryma-go/version"
+	"github.com/qryma-ai/qryma-go/version"
 )
 
 // SearchOptions contains the options for a search request

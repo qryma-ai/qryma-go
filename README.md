@@ -19,7 +19,7 @@ A Go SDK for the Qryma Search API, providing a simple and intuitive interface fo
 You can install the Qryma Go SDK using go get:
 
 ```bash
-go get github.com/qryma/qryma-go
+go get github.com/qryma-ai/qryma-go
 ```
 
 ## Quick Start
@@ -31,11 +31,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
-	// To install: go get github.com/qryma/qryma-go
+	// To install: go get github.com/qryma-ai/qryma-go
 	client, err := qryma.Qryma(qryma.ClientConfig{
 		APIKey: "ak-********************",
 	})
@@ -65,7 +65,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
@@ -104,7 +104,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
@@ -144,7 +144,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
@@ -235,7 +235,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
@@ -271,7 +271,7 @@ package main
 import (
 	"os"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {
@@ -295,7 +295,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/qryma/qryma-go"
+	"github.com/qryma-ai/qryma-go"
 )
 
 func main() {

@@ -8,5 +8,5 @@ const (
 	Description = "Qryma Search API Go SDK"
 	Author      = "Qryma Team"
 	License     = "MIT"
-	URL         = "https://github.com/qryma/qryma-go"
+	URL         = "https://github.com/qryma-ai/qryma-go"
 )

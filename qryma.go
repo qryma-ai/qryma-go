@@ -11,7 +11,7 @@
 //		"fmt"
 //		"log"
 //
-//		"github.com/qryma/qryma-go"
+//		"github.com/qryma-ai/qryma-go"
 //	)
 //
 //	func main() {
@@ -32,17 +32,17 @@
 package qryma
 
 import (
-	"github.com/qryma/qryma-go/client"
-	"github.com/qryma/qryma-go/version"
+	"github.com/qryma-ai/qryma-go/client"
+	"github.com/qryma-ai/qryma-go/version"
 )
 
 // Re-export types from client package for convenience
 type (
-	SearchOptions  = client.SearchOptions
-	QrymaResponse  = client.QrymaResponse
-	QrymaClient    = client.QrymaClient
-	ClientConfig   = client.ClientConfig
-	ClientOption   = client.ClientOption
+	SearchOptions = client.SearchOptions
+	QrymaResponse = client.QrymaResponse
+	QrymaClient   = client.QrymaClient
+	ClientConfig  = client.ClientConfig
+	ClientOption  = client.ClientOption
 )
 
 // Qryma creates a Qryma client instance.
@@ -63,4 +63,3 @@ func NewClient(apiKey string, opts ...ClientOption) (*QrymaClient, error) {
 func Version() string {
 	return version.Version
 }
-
