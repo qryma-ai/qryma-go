@@ -179,7 +179,7 @@ func (c *QrymaClient) Search(query string, options ...SearchOptions) (QrymaRespo
 //
 // Example:
 //
-//	// To install: go get github.com/qryma/qryma-go
+//	// To install: go get github.com/qryma-ai/qryma-go
 //	client := qryma.Qryma(qryma.ClientConfig{
 //		APIKey: "ak-********************",
 //	})
