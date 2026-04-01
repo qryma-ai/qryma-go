@@ -14,10 +14,11 @@ import (
 
 // SearchOptions contains the options for a search request
 type SearchOptions struct {
-	Lang  string `json:"lang"`
-	Start int    `json:"start"`
-	Safe  bool   `json:"safe"`
-	Mode  string `json:"mode"`
+	Lang       string `json:"lang"`
+	Start      int    `json:"start"`
+	Safe       bool   `json:"safe"`
+	Mode       string `json:"mode"`
+	MaxResults int    `json:"max_results"`
 }
 
 // ClientConfig contains the configuration for creating a Qryma client
@@ -128,12 +129,21 @@ func (c *QrymaClient) Search(query string, options ...SearchOptions) (QrymaRespo
 		mode = "snippet"
 	}
 
+	// 设置 MaxResults：默认值为 5，限制在 1-10 之间
+	maxResults := opts.MaxResults
+	if maxResults <= 0 {
+		maxResults = 5
+	} else if maxResults > 10 {
+		maxResults = 10
+	}
+
 	payload := map[string]interface{}{
-		"query": query,
-		"lang":  opts.Lang,
-		"start": opts.Start,
-		"safe":  opts.Safe,
-		"mode":  mode,
+		"query":       query,
+		"lang":        opts.Lang,
+		"start":       opts.Start,
+		"safe":        opts.Safe,
+		"mode":        mode,
+		"max_results": maxResults,
 	}
 
 	jsonPayload, err := json.Marshal(payload)
