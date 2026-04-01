@@ -14,10 +14,10 @@ import (
 
 // SearchOptions contains the options for a search request
 type SearchOptions struct {
-	Lang   string `json:"lang"`
-	Start  int    `json:"start"`
-	Safe   bool   `json:"safe"`
-	Detail bool   `json:"detail"`
+	Lang  string `json:"lang"`
+	Start int    `json:"start"`
+	Safe  bool   `json:"safe"`
+	Mode  string `json:"mode"`
 }
 
 // ClientConfig contains the configuration for creating a Qryma client
@@ -118,12 +118,22 @@ func (c *QrymaClient) Search(query string, options ...SearchOptions) (QrymaRespo
 		opts = options[0]
 	}
 
+	// 设置默认值：如果 Mode 为空，则默认使用 "snippet"
+	mode := opts.Mode
+	if mode == "" {
+		mode = "snippet"
+	}
+	// 确保 Mode 值是有效的
+	if mode != "snippet" && mode != "fulltext" {
+		mode = "snippet"
+	}
+
 	payload := map[string]interface{}{
-		"query":  query,
-		"lang":   opts.Lang,
-		"start":  opts.Start,
-		"safe":   opts.Safe,
-		"detail": opts.Detail,
+		"query": query,
+		"lang":  opts.Lang,
+		"start": opts.Start,
+		"safe":  opts.Safe,
+		"mode":  mode,
 	}
 
 	jsonPayload, err := json.Marshal(payload)

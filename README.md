@@ -117,10 +117,10 @@ func main() {
 
 	// Search with all available parameters
 	response, err := client.Search("machine learning tutorials", qryma.SearchOptions{
-		Lang:   "en",
-		Start:  0,
-		Safe:   false,
-		Detail: false,
+		Lang:  "en",
+		Start: 0,
+		Safe:  false,
+		Mode:  "snippet",
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -218,7 +218,7 @@ Perform a search with the given query and return the raw API response.
   - `Lang`: Language code for search results (e.g., 'am' for Amharic, 'en' for English)
   - `Start`: Starting position of results (default: 0)
   - `Safe`: Safe search mode: true or false (default: false)
-  - `Detail`: Include detailed results (default: false)
+  - `Mode`: Result detail mode: 'snippet' for brief descriptions or 'fulltext' for detailed content (default: 'snippet')
 
 **Returns:**
 - `QrymaResponse`: Raw API response (map[string]interface{})
