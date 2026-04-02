@@ -117,10 +117,10 @@ func main() {
 
 	// Search with all available parameters
 	response, err := client.Search("machine learning tutorials", qryma.SearchOptions{
-		Lang:  "en",
-		Start: 0,
-		Safe:  false,
-		Mode:  "snippet",
+		Lang:       "en",
+		Safe:       false,
+		Mode:       "snippet",
+		MaxResults: 5,
 	})
 	if err != nil {
 		log.Fatal(err)
@@ -180,6 +180,7 @@ map[string]interface{}{
 			"position":   1,
 			"site_name":  "Example.com",
 			"snippet":    "Description text...",
+      "text":       "Full text...",
 		},
 	},
 }
@@ -191,6 +192,7 @@ map[string]interface{}{
 - `link`: URL of the search result
 - `position`: Position in the results list
 - `site_name`: Name of the website
+- `text`: Full text of the page
 - `snippet`: Brief description or excerpt from the page
 
 ## API Reference
@@ -216,9 +218,9 @@ Perform a search with the given query and return the raw API response.
 - `query`: Search query string (required)
 - `options`: Search options (optional)
   - `Lang`: Language code for search results (e.g., 'am' for Amharic, 'en' for English)
-  - `Start`: Starting position of results (default: 0)
   - `Safe`: Safe search mode: true or false (default: false)
   - `Mode`: Result detail mode: 'snippet' for brief descriptions or 'fulltext' for detailed content (default: 'snippet')
+  - `MaxResults`: Maximum number of results to return (default: 5, range: 1-10)
 
 **Returns:**
 - `QrymaResponse`: Raw API response (map[string]interface{})

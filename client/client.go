@@ -15,7 +15,6 @@ import (
 // SearchOptions contains the options for a search request
 type SearchOptions struct {
 	Lang       string `json:"lang"`
-	Start      int    `json:"start"`
 	Safe       bool   `json:"safe"`
 	Mode       string `json:"mode"`
 	MaxResults int    `json:"max_results"`
@@ -140,7 +139,6 @@ func (c *QrymaClient) Search(query string, options ...SearchOptions) (QrymaRespo
 	payload := map[string]interface{}{
 		"query":       query,
 		"lang":        opts.Lang,
-		"start":       opts.Start,
 		"safe":        opts.Safe,
 		"mode":        mode,
 		"max_results": maxResults,
